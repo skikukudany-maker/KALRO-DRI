@@ -1,0 +1,1109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | Our Farm</title>
+
+    <style>
+
+        /* ================================
+           GENERAL
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9f6;
+            color: #173b24;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .gallery-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid #e5ebe5;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #24723a;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 11px 20px;
+
+            background: #24723a;
+            color: white;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .back-home:hover {
+            background: #174d28;
+            transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .gallery-hero {
+            padding: 90px 7% 70px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(12, 55, 28, 0.85),
+                    rgba(12, 55, 28, 0.85)
+                ),
+                url("icover.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .gallery-hero span {
+            display: block;
+
+            margin-bottom: 15px;
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(40px, 6vw, 70px);
+            margin-bottom: 20px;
+        }
+
+        .gallery-hero p {
+            max-width: 700px;
+            margin: auto;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            opacity: 0.9;
+        }
+
+/* ================================
+   GALLERY SECTION
+================================= */
+
+.gallery-area {
+    position: relative;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 80px 6%;
+
+    background:
+        linear-gradient(
+            rgba(10, 45, 25, 0.72),
+            rgba(10, 45, 25, 0.72)
+        ),
+        url("logo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+        /* CATEGORY FILTERS */
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 45px;
+        }
+
+        .filter-btn {
+            border: none;
+
+            padding: 11px 20px;
+
+            border-radius: 30px;
+
+            background: white;
+            color: #31533a;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+
+            transition: 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #24723a;
+           background: rgba(255,255,255,0.92);
+        }
+
+
+        /* PHOTO GRID */
+
+        .photo-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+.photo {
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: white;
+
+    cursor: pointer;
+
+    border: 2px solid rgba(255,255,255,0.45);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.20);
+
+    transition: 0.4s ease;
+}
+        
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .photo:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .photo:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* PHOTO OVERLAY */
+
+        .photo-overlay {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 25px 18px 18px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.75)
+                );
+
+            opacity: 0;
+
+            transition: 0.3s ease;
+        }
+
+        .photo:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-overlay h3 {
+            font-size: 17px;
+        }
+
+
+        /* ================================
+           LIGHTBOX
+        ================================= */
+
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            background: rgba(0,0,0,0.92);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 25px;
+            right: 35px;
+
+            color: white;
+
+            font-size: 40px;
+
+            cursor: pointer;
+        }
+
+
+        /* ================================
+           CONTACT SECTION
+        ================================= */
+
+        .contact-section {
+            padding: 90px 7%;
+
+            background: #173b24;
+
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .contact-container span {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .contact-container h2 {
+            font-size: clamp(34px, 5vw, 50px);
+
+            margin: 15px 0;
+        }
+
+        .contact-container > p {
+            max-width: 650px;
+
+            margin: 0 auto 45px;
+
+            line-height: 1.7;
+
+            opacity: 0.85;
+        }
+
+
+        /* CONTACT CARDS */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 30px 20px;
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 18px;
+
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+
+            background: rgba(255,255,255,0.13);
+        }
+
+        .contact-icon {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: rgba(255,255,255,0.8);
+
+            line-height: 1.6;
+        }
+
+        .contact-card a:hover {
+            color: white;
+        }
+
+
+        /* WHATSAPP BUTTON */
+
+        .whatsapp-button {
+            display: inline-flex;
+
+            margin-top: 40px;
+
+            padding: 15px 25px;
+
+            background: #25D366;
+
+            color: white;
+
+            border-radius: 40px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(37,211,102,0.3);
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            padding: 25px 7%;
+
+            text-align: center;
+
+            background: #102a1a;
+
+            color: rgba(255,255,255,0.7);
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 950px) {
+
+            .photo-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .gallery-header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .back-home {
+                padding: 9px 14px;
+                font-size: 13px;
+            }
+
+            .gallery-hero {
+                padding: 70px 6%;
+            }
+
+            .gallery-area {
+                padding: 60px 5%;
+            }
+
+            .photo-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .photo {
+                height: 220px;
+            }
+
+            .photo-overlay {
+                opacity: 1;
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 280px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="gallery-header">
+
+        <div class="logo">
+            OUR FARM
+        </div>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="gallery-hero">
+
+        <span>Our Farm • Our Products • Our Story</span>
+
+        <h1>Our Gallery</h1>
+
+        <p>
+            Take a closer look at our farm, livestock, crops,
+            seeds, feeds and agricultural products.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================================
+         PHOTO GALLERY
+    ================================= -->
+
+    <section class="gallery-area">
+
+        <!-- FILTERS -->
+
+        <div class="gallery-filters">
+
+            <button class="filter-btn active"
+                    onclick="filterGallery('all')">
+                All
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('cows')">
+                Cows
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('sahiwal')">
+                Sahiwal
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('young')">
+                Young
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('seeds')">
+                Seeds
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('hay')">
+                Hay & Feeds
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('farm')">
+                Farm Life
+            </button>
+
+        </div>
+
+
+
+        <!-- PHOTO GRID -->
+
+        <div class="photo-grid">
+
+
+            <!-- COWS -->
+
+            <div class="photo" data-category="cows"
+                 onclick="openLightbox(this)">
+
+                <img src="cattle.png"
+                     alt="Our cows">
+
+                <div class="photo-overlay">
+                    <h3>Our Cows</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="cows"
+                 onclick="openLightbox(this)">
+
+                <img src="cattle 2.png"
+                     alt="Farm cattle">
+
+                <div class="photo-overlay">
+                    <h3>Farm Cattle</h3>
+                </div>
+
+            </div>
+
+
+            <!-- SAHIWAL-->
+
+            <div class="photo" data-category="sahiwal"
+                 onclick="openLightbox(this)">
+
+                <img src="sahiwal.png"
+                     alt="Our sheep">
+
+                <div class="photo-overlay">
+                    <h3>SAHIWAL</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="sahiwal"
+                 onclick="openLightbox(this)">
+
+                <img src="cows.png"
+                     alt="Sheep on the farm">
+
+                <div class="photo-overlay">
+                    <h3>Our Cows
+
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <!-- young -->
+
+            <div class="photo" data-category="young"
+                 onclick="openLightbox(this)">
+
+                <img src="young cows.png"
+                     alt="young">
+
+                <div class="photo-overlay">
+                    <h3>Young Jersey</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="young"
+                 onclick="openLightbox(this)">
+
+                <img src="Jersey.jpg"
+                     alt="Jersey cows on the farm">
+
+                <div class="photo-overlay">
+                    <h3>Jersey Cow</h3>
+                </div>
+
+            </div>
+
+
+            <!-- SEEDS -->
+
+            <div class="photo" data-category="seeds"
+                 onclick="openLightbox(this)">
+
+                <img src="seeds k.png"
+                     alt="Agricultural seeds">
+
+                <div class="photo-overlay">
+                    <h3>Customer Relationship</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="seeds"
+                 onclick="openLightbox(this)">
+
+                <img src="Barley seeds.jpg"
+                     alt="Farm seeds">
+
+                <div class="photo-overlay">
+                    <h3>Farm Seeds</h3>
+                </div>
+
+            </div>
+
+
+            <!-- HAY & FEEDS -->
+
+            <div class="photo" data-category="hay"
+                 onclick="openLightbox(this)">
+
+                <img src="hay 1.png"
+                     alt=" hay">
+
+                <div class="photo-overlay">
+                    <h3>Hay</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="hay"
+                 onclick="openLightbox(this)">
+
+                <img src="hay 2.png"
+                     alt="Packed">
+
+                <div class="photo-overlay">
+                    <h3>Ready Packed</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="hay"
+                 onclick="openLightbox(this)">
+
+                <img src="hay 3.png"
+                     alt="Storage">
+
+                <div class="photo-overlay">
+                    <h3>warehouse</h3>
+                </div>
+
+            </div>
+
+
+            <!-- FARM LIFE -->
+
+            <div class="photo" data-category="farm"
+                 onclick="openLightbox(this)">
+
+                <img src="farm life.png"
+                     alt="Our farm">
+
+                <div class="photo-overlay">
+                    <h3>Life on the Farm</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="farm"
+                 onclick="openLightbox(this)">
+
+                <img src="cow life.png"
+                     alt="milki">
+
+                <div class="photo-overlay">
+                    <h3>Maximum Milk Production</h3>
+                </div>
+
+            </div>
+
+<!-- 
+            <div class="photo" data-category="farm"
+                 onclick="openLightbox(this)">
+
+                <img src="images/farm-3.jpg"
+                     alt="Agricultural farming">
+
+                <div class="photo-overlay">
+                    <h3>Modern Farming</h3>
+                </div>
+
+            </div>
+
+
+            <div class="photo" data-category="farm"
+                 onclick="openLightbox(this)">
+
+                <img src="images/farm-4.jpg"
+                     alt="Farm products">
+
+                <div class="photo-overlay">
+                    <h3>Our Products</h3>
+                </div>
+
+            </div>
+
+        </div> -->
+
+    </section>
+
+
+
+    <!-- ================================
+         LIGHTBOX
+    ================================= -->
+
+    <div class="lightbox" id="lightbox">
+
+        <span class="close-lightbox"
+              onclick="closeLightbox()">
+            ×
+        </span>
+
+        <img id="lightbox-image"
+             src=""
+             alt="Gallery image">
+
+    </div>
+
+
+
+    <!-- ================================
+         CONTACT SECTION
+    ================================= -->
+
+    <section class="contact-section"
+             id="contact">
+
+        <div class="contact-container">
+
+            <span>GET IN TOUCH</span>
+
+            <h2>Let's Talk</h2>
+
+            <p>
+                Interested in our livestock, seeds, hay, silage
+                or other farm products? Contact us today and
+                we'll be happy to assist you.
+            </p>
+
+
+            <div class="contact-grid">
+
+
+                <!-- PHONE -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <h3>Call Us</h3>
+
+                    <p>
+                        <a href="tel:+254 782 443309">
+                            +254 782 443309
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        💬
+                    </div>
+
+                    <h3>WhatsApp</h3>
+
+                    <p>
+                        Chat with us about our
+                        products and availability.
+                    </p>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <h3>Visit Us</h3>
+
+                    <p>
+                        Kenya
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a href="https://wa.me/+254 782 443309"
+               class="whatsapp-button"
+               target="_blank"
+               rel="noopener">
+
+                💬 Chat With Us on WhatsApp
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        © 2026 Our Farm. All Rights Reserved.
+
+    </footer>
+
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        /* ================================
+           FILTER GALLERY
+        ================================= */
+
+        function filterGallery(category) {
+
+            const photos =
+                document.querySelectorAll(".photo");
+
+            const buttons =
+                document.querySelectorAll(".filter-btn");
+
+
+            buttons.forEach(button => {
+                button.classList.remove("active");
+            });
+
+
+            event.target.classList.add("active");
+
+
+            photos.forEach(photo => {
+
+                if (
+                    category === "all" ||
+                    photo.dataset.category === category
+                ) {
+
+                    photo.style.display = "block";
+
+                } else {
+
+                    photo.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+
+        /* ================================
+           OPEN LIGHTBOX
+        ================================= */
+
+        function openLightbox(photo) {
+
+            const image =
+                photo.querySelector("img");
+
+            const lightbox =
+                document.getElementById("lightbox");
+
+            const lightboxImage =
+                document.getElementById("lightbox-image");
+
+
+            lightboxImage.src = image.src;
+
+            lightboxImage.alt = image.alt;
+
+            lightbox.classList.add("active");
+
+        }
+
+
+
+        /* ================================
+           CLOSE LIGHTBOX
+        ================================= */
+
+        function closeLightbox() {
+
+            document
+                .getElementById("lightbox")
+                .classList.remove("active");
+
+        }
+
+
+
+        /* CLOSE WHEN CLICKING OUTSIDE IMAGE */
+
+        document
+            .getElementById("lightbox")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    closeLightbox();
+
+                }
+
+            });
+
+
+
+        /* CLOSE WITH ESC KEY */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                closeLightbox();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
