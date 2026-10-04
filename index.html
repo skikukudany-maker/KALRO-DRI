@@ -1261,11 +1261,1455 @@
 
 
         </div>
+        
+            <!-- ==============================
+                 09. Pigs
+            =============================== -->
+
+            <a
+                class="resource-card reveal"
+                href="pigs.html">
+
+                <div class="resource-image">
+
+                    <img
+                        src="pigggg.jpg"
+                        alt="pigs">
+
+                </div>
+
+                <span class="resource-number">
+                    09
+                </span>
+
+                <div class="resource-icon">
+                    🐖
+                </div>
+
+                <h3>
+                  Pigs
+                </h3>
+
+                <p>
+                    Pigs available for farmers interested
+                    in pork production.
+                </p>
+
+                <span class="arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+            <!-- ==============================
+                 10. chickencages
+            =============================== -->
+
+            <a
+                class="resource-card reveal"
+                href="cages.html">
+
+                <div class="resource-image">
+
+                    <img
+                        src="cages logo.jpg"
+                        alt="chicken cages">
+
+                </div>
+
+                <span class="resource-number">
+                    10
+                </span>
+
+                <div class="resource-icon">
+                    
+                </div>
+
+                <h3>
+                   QUALITY LAYER CAGES
+                </h3>
+
+                <p>
+                    QUALITY LAYER CAGES.
+                </p>
+
+                <span class="arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+    </div>
+    <!-- =========================================
+     ORGANIC MANURE ORDER SECTION
+========================================= -->
+<section class="manure section" id="manure">
+
+<div class="container">
+
+<div class="section-heading centered">
+<span class="section-kicker">KALRO FARM NAIVASHA</span>
+
+<h2>Decomposed Goat & Sheep Manure</h2>
+
+<p>
+We collect manure from pastoralists and allow it to fully decompose before supplying
+farmers with premium organic manure ready for immediate farm use.
+Customers can collect from our loading site or request nationwide delivery.
+</p>
+</div>
+
+
+<div class="manure-card">
+
+<div class="info-grid">
+
+<div class="info-box">
+<h3>📍 Loading Site</h3>
+<p>KALRO DRI Naivasha</p>
+</div>
+
+<div class="info-box">
+<h3>💰 Self Collection</h3>
+
+<p>Manure <strong>KSh 1,200</strong> / tonne</p>
+<p>Loading <strong>KSh 250</strong> / tonne</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🚚 Delivery</h3>
+
+<p>Manure <strong>KSh 1,200</strong> / tonne</p>
+
+<p>Loading <strong>KSh 250</strong> / tonne</p>
+
+<p>Transport depends on distance.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🚛 Truck Capacities</h3>
+
+<ul>
+
+<li>9 Tonnes - Mitsubishi Canter</li>
+
+<li>12 Tonnes - Isuzu FRR</li>
+
+<li>18 Tonnes - Isuzu FVZ</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- PHOTO GALLERY -->
+
+<div class="gallery">
+
+<h3>Product Gallery</h3>
+
+<div class="gallery-grid">
+
+<img src="manure 1.png" onclick="openImage(this.src)">
+
+<img src="manure 2.png" onclick="openImage(this.src)">
+
+<img src="manure 3.png" onclick="openImage(this.src)">
+
+<!-- <img src="assets/images/manure4.jpg" onclick="openImage(this.src)"> -->
+
+<img src="loading 1.png" onclick="openImage(this.src)">
+
+<!-- <img src="assets/images/truck.jpg" onclick="openImage(this.src)"> -->
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h3>Place Your Order</h3>
+
+<form>
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input type="text" id="name" required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input type="tel" id="phone" required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Tonnes Required</label>
+
+<input type="number" id="tonnes" required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Collection Method</label>
+
+<select id="method">
+
+<option>Self Collection</option>
+
+<option>Delivery</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Delivery Location</label>
+
+<input type="text" id="location">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Preferred Truck</label>
+
+<select id="truck">
+
+<option>9 Tonnes - Mitsubishi Canter</option>
+
+<option>12 Tonnes - Isuzu FRR</option>
+
+<option>18 Tonnes - Isuzu FVZ</option>
+
+</select>
+
+</div>
+
+
+<button type="button" class="whatsapp-btn" onclick="sendOrder()">
+
+📲 Order via WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IMAGE LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeImage()">
+
+<img id="lightbox-img">
+
+</div>
+
+
+
+<script>
+
+function openImage(src){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("lightbox-img").src=src;
+
+}
+
+function closeImage(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+function sendOrder(){
+
+let name=document.getElementById("name").value;
+
+let phone=document.getElementById("phone").value;
+
+let tonnes=document.getElementById("tonnes").value;
+
+let method=document.getElementById("method").value;
+
+let location=document.getElementById("location").value;
+
+let truck=document.getElementById("truck").value;
+
+let message=`Hello Kalro Farm Naivasha,
+
+I would like to order decomposed goat/sheep manure.
+
+Name: ${name}
+
+Phone: ${phone}
+
+Quantity: ${tonnes} Tonnes
+
+Collection Method: ${method}
+
+Delivery Location: ${location}
+
+Preferred Truck: ${truck}
+
+Please send me a quotation.`;
+
+window.open("https://wa.me/254782443309?text="+encodeURIComponent(message));
+
+}
+
+</script>
+
+</section>
+<!-- =========================================
+     AUSTRALIAN RED NAPIER
+========================================= -->
+
+<section class="fodder-product section">
+
+<div class="container">
+
+<div class="product-card">
+
+<div class="product-images">
+
+<img src="red nep.png" alt="Australian Red Napier">
+
+<div class="image-grid">
+
+<img src="red 2.png" alt="">
+<img src="red 3.jpg" alt="">
+<img src="red 4.jpg" alt="">
+
+</div>
+
+</div>
+
+
+<div class="product-details">
+
+<span class="section-kicker">
+KALRO FODDER SUPERMARKET
+</span>
+
+<h2>Australian Red Napier Grass</h2>
+
+<h4>(Purple Napier)</h4>
+
+<p>
+
+Introducing Australia's high-protein Red Napier grass that is transforming livestock feeding.
+
+Suitable for dairy and beef cattle, goats, sheep, pigs, rabbits and poultry.
+
+</p>
+
+
+<div class="feature-grid">
+
+<div class="feature">
+<strong>Protein</strong>
+<p>19.98% - 21% CP</p>
+</div>
+
+<div class="feature">
+<strong>Growth</strong>
+<p>Up to 13 ft</p>
+</div>
+
+<div class="feature">
+<strong>Harvests</strong>
+<p>6 Times Per Year</p>
+</div>
+
+<div class="feature">
+<strong>Yield</strong>
+<p>180-220 Tons/Acre/Year</p>
+</div>
+
+<div class="feature">
+<strong>First Harvest</strong>
+<p>70-90 Days</p>
+</div>
+
+<div class="feature">
+<strong>Regrowth</strong>
+<p>Every 50 Days</p>
+</div>
+
+</div>
+
+<ul class="product-benefits">
+
+<li>✔ High Crude Protein</li>
+
+<li>✔ Very Fast Growth</li>
+
+<li>✔ Drought Tolerant</li>
+
+<li>✔ Highly Palatable</li>
+
+<li>✔ Beautiful Purple-Red Colour</li>
+
+<li>✔ Suitable for all Livestock</li>
+
+</ul>
+
+
+<div class="price-box">
+
+<h3>KSh 30 Per Cutting</h3>
+
+<p>Countrywide Delivery Available</p>
+
+</div>
+
+
+<div class="other-products">
+
+<h3>Also Available</h3>
+
+<ul>
+
+<li>Juncao (Chinese Magic) – <strong>KSh 10</strong> per cutting</li>
+
+<li>Super K Sweet Potato Vines – <strong>KSh 10</strong> per vine</li>
+
+<li>Pakchong Super Napier F1 – <strong>KSh 10</strong> per cutting</li>
+
+<li>Guatemala Grass – <strong>KSh 20</strong> per split</li>
+
+<li>Brachiaria MG4 – <strong>KSh 10</strong> per split</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<hr style="margin:60px 0;">
+
+
+<div class="enquiry-card">
+
+<h2>Send an Enquiry</h2>
+
+<form>
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input type="text" id="name" required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input type="tel" id="phone" required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>County / Town</label>
+
+<input type="text" id="location">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Quantity Required</label>
+
+<input type="number" id="quantity">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Message</label>
+
+<textarea id="message" rows="5"></textarea>
+
+</div>
+
+
+<button type="button" class="whatsapp-btn" onclick="sendEnquiry()">
+
+📲 Enquire on WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+function sendEnquiry(){
+
+let name=document.getElementById("name").value;
+
+let phone=document.getElementById("phone").value;
+
+let location=document.getElementById("location").value;
+
+let quantity=document.getElementById("quantity").value;
+
+let message=document.getElementById("message").value;
+
+let text=`Hello KALRO Fodder Supermarket,
+
+I would like to enquire about Australian Red Napier.
+
+Name: ${name}
+
+Phone: ${phone}
+
+Location: ${location}
+
+Quantity Required: ${quantity}
+
+Message: ${message}`;
+
+window.open("https://wa.me/254782443309?text="+encodeURIComponent(text));
+
+}
+
+</script>
+
+<!-- =========================================================
+     FEED CHOPPERS SECTION
+========================================================= -->
+
+<section class="choppers-section" id="feed-choppers">
+
+    <div class="choppers-container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="choppers-heading">
+
+            <span>🌾 KALRO DRI NAIVASHA</span>
+
+            <h2>Feed Choppers</h2>
+
+            <p>
+                Built for Farmers • Reliable • Durable
+            </p>
+
+            <div class="chopper-notice">
+                💰 Cash or Lipa Mosmos (Loan) Available
+                <br>
+                🚚 FREE Delivery & Installation Countrywide – Kenya 🇰🇪
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CHOPPER PRODUCTS
+        ================================================== -->
+
+        <div class="choppers-grid">
+
+
+            <!-- 1. PETROL 7.5HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="petrol.jpg"
+                         alt="Petrol Feed Chopper 7.5HP">
+
+                    <span>7.5HP PETROL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Petrol Feed Chopper – 7.5HP</h3>
+
+                    <div class="cash-price">
+                        KSh 28,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 5,600</strong></p>
+
+                        <p>📅 KSh 2,350 × 12 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%207.5HP%20Petrol%20Feed%20Chopper%20priced%20at%20KSh%2028%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 2. ELECTRIC 3HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="35k.jpg"
+                         alt="Electric Feed Chopper 3HP">
+
+                    <span>3HP ELECTRIC</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Electric Feed Chopper – 3HP</h3>
+
+                    <div class="cash-price">
+                        KSh 35,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 6,500</strong></p>
+
+                        <p>📅 KSh 2,940 × 12 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%203HP%20Electric%20Feed%20Chopper%20priced%20at%20KSh%2035%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 3. ELECTRIC 5HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="5hp.png"
+                         alt="Electric Feed Chopper 5HP">
+
+                    <span>5HP ELECTRIC</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Electric Feed Chopper – 5HP</h3>
+
+                    <div class="cash-price">
+                        KSh 38,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 7,600</strong></p>
+
+                        <p>📅 KSh 3,200 × 12 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%205HP%20Electric%20Feed%20Chopper%20priced%20at%20KSh%2038%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 4. IMPORTED PETROL 7.5HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="75hp.jpg"
+                         alt="Imported Petrol Feed Chopper 7.5HP">
+
+                    <span>IMPORTED PETROL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Imported Petrol Feed Chopper – 7.5HP</h3>
+
+                    <div class="cash-price">
+                        KSh 35,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 7,000</strong></p>
+
+                        <p>📅 KSh 2,940 × 12 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%20Imported%207.5HP%20Petrol%20Feed%20Chopper%20priced%20at%20KSh%2035%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 5. IMPORTED ELECTRIC 3HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="electric imp.jpg"
+                         alt="Imported Electric Feed Chopper 3HP">
+
+                    <span>IMPORTED ELECTRIC</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Imported Electric Feed Chopper – 3HP</h3>
+
+                    <div class="cash-price">
+                        KSh 41,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 8,200</strong></p>
+
+                        <p>📅 KSh 3,440 × 12 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%20Imported%203HP%20Electric%20Feed%20Chopper%20priced%20at%20KSh%2041%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 6. IMPORTED ELECTRIC 5HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="electric 2.jpg"
+                         alt="Imported Electric Feed Chopper 5HP">
+
+                    <span>IMPORTED ELECTRIC</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Imported Electric Feed Chopper – 5HP</h3>
+
+                    <div class="cash-price">
+                        KSh 45,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 9,000</strong></p>
+
+                        <p>📅 KSh 3,570 × 15 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%20Imported%205HP%20Electric%20Feed%20Chopper%20priced%20at%20KSh%2045%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 7. IMPORTED DIESEL 7.5HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="electric 1.jpg"
+                         alt="Imported Diesel Feed Chopper 7.5HP">
+
+                    <span>7.5HP DIESEL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Imported Diesel Feed Chopper – 7.5HP</h3>
+
+                    <div class="cash-price">
+                        KSh 50,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 10,000</strong></p>
+
+                        <p>📅 KSh 3,360 × 15 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%20Imported%207.5HP%20Diesel%20Feed%20Chopper%20priced%20at%20KSh%2050%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 8. DIESEL 10HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="heavy duty.jpg"
+                         alt="Diesel Feed Chopper 10HP">
+
+                    <span>10HP DIESEL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Diesel Feed Chopper – 10HP</h3>
+
+                    <div class="cash-price">
+                        KSh 60,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 12,000</strong></p>
+
+                        <p>📅 KSh 3,360 × 18 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%2010HP%20Diesel%20Feed%20Chopper%20priced%20at%20KSh%2060%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 9. HEAVY DUTY 18HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="diesel.jpg"
+                         alt="Heavy Duty Feed Chopper 18HP Diesel">
+
+                    <span>18HP HEAVY DUTY</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Heavy Duty Feed Chopper – 18HP Diesel</h3>
+
+                    <div class="cash-price">
+                        KSh 160,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 32,000</strong></p>
+
+                        <p>📅 KSh 8,060 × 20 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%2018HP%20Heavy%20Duty%20Diesel%20Feed%20Chopper%20priced%20at%20KSh%20160%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 10. COMMERCIAL 20HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="imp elec.jpg"
+                         alt="Commercial Feed Chopper 20HP Diesel">
+
+                    <span>20HP COMMERCIAL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Commercial Feed Chopper – 20HP Diesel</h3>
+
+                    <div class="cash-price">
+                        KSh 180,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 36,000</strong></p>
+
+                        <p>📅 KSh 9,070 × 20 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%2020HP%20Commercial%20Diesel%20Feed%20Chopper%20priced%20at%20KSh%20180%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 11. COMMERCIAL 22HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="imported.jpg"
+                         alt="Commercial Feed Chopper 22HP Diesel">
+
+                    <span>22HP COMMERCIAL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Commercial Feed Chopper – 22HP Diesel</h3>
+
+                    <div class="cash-price">
+                        KSh 198,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 39,600</strong></p>
+
+                        <p>📅 KSh 9,730 × 20 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%2022HP%20Commercial%20Diesel%20Feed%20Chopper%20priced%20at%20KSh%20198%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 12. COMMERCIAL 24HP -->
+
+            <div class="chopper-card">
+
+                <div class="chopper-image">
+
+                    <img src="import.jpg"
+                         alt="Commercial Feed Chopper 24HP Diesel">
+
+                    <span>24HP COMMERCIAL</span>
+
+                </div>
+
+                <div class="chopper-content">
+
+                    <h3>Commercial Feed Chopper – 24HP Diesel</h3>
+
+                    <div class="cash-price">
+                        KSh 210,000
+                    </div>
+
+                    <div class="loan-details">
+
+                        <p>🪙 Deposit: <strong>KSh 42,000</strong></p>
+
+                        <p>📅 KSh 9,620 × 20 months</p>
+
+                    </div>
+
+                    <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20am%20interested%20in%20the%2024HP%20Commercial%20Diesel%20Feed%20Chopper%20priced%20at%20KSh%20210%2C000."
+                       class="chopper-btn"
+                       target="_blank">
+
+                        📲 Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CONTACT AREA
+        ================================================== -->
+
+        <div class="chopper-contact">
+
+            <h2>Need a Feed Chopper?</h2>
+
+            <p>
+                Call or WhatsApp us today for enquiries,
+                availability, delivery and installation.
+            </p>
+
+            <div class="contact-numbers">
+
+                <a href="tel:+254782443309">
+                     0782 443 309
+                </a>
+
+                <a href="tel:+254743752569">
+                     0743 752 569
+                </a>
+
+            </div>
+
+            <a href="https://wa.me/254782443309?text=Hello%20KALRO%20DRI%20Naivasha%2C%20I%20would%20like%20to%20enquire%20about%20your%20feed%20choppers."
+               class="main-whatsapp-btn"
+               target="_blank">
+
+                📲 WhatsApp Us
+
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
+
+<!-- =========================================================
+     FEED CHOPPER CSS
+========================================================= -->
+
+<style>
+
+.choppers-section {
+    padding: 90px 20px;
+    background: #f5f8f3;
+}
+
+.choppers-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* HEADING */
+
+.choppers-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.choppers-heading > span {
+    color: #3d7b3d;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.choppers-heading h2 {
+    font-size: 44px;
+    color: #173b21;
+    margin: 10px 0;
+}
+
+.choppers-heading p {
+    color: #666;
+    font-size: 17px;
+}
+
+.chopper-notice {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 25px;
+    background: #e9f3e6;
+    color: #285f2c;
+    border-radius: 12px;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+
+/* PRODUCT GRID */
+
+.choppers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.chopper-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    transition: .3s ease;
+}
+
+.chopper-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.13);
+}
+
+
+/* IMAGE */
+
+.chopper-image {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.chopper-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s ease;
+}
+
+.chopper-card:hover .chopper-image img {
+    transform: scale(1.05);
+}
+
+
+/* IMAGE LABEL */
+
+.chopper-image span {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: white;
+    color: #27632c;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* CONTENT */
+
+.chopper-content {
+    padding: 23px;
+}
+
+.chopper-content h3 {
+    color: #173b21;
+    font-size: 20px;
+    line-height: 1.35;
+    margin: 0 0 15px;
+}
+
+
+/* PRICE */
+
+.cash-price {
+    color: #2d7135;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+
+/* LOAN */
+
+.loan-details {
+    background: #f3f7f1;
+    padding: 13px;
+    border-radius: 9px;
+    margin-bottom: 18px;
+}
+
+.loan-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* BUTTON */
+
+.chopper-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #25d366;
+    color: white;
+    padding: 13px;
+    border-radius: 9px;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.chopper-btn:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+}
+
+
+/* CONTACT */
+
+.chopper-contact {
+    text-align: center;
+    margin: 65px auto 0;
+    max-width: 750px;
+    padding: 40px 25px;
+    background: #173b21;
+    color: white;
+    border-radius: 20px;
+}
+
+.chopper-contact h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+.chopper-contact p {
+    color: #dce8dc;
+    line-height: 1.6;
+}
+
+.contact-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.contact-numbers a {
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,.12);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.main-whatsapp-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #25d366;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: .3s ease;
+}
+
+.main-whatsapp-btn:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .choppers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .choppers-heading h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .choppers-section {
+        padding: 60px 14px;
+    }
+
+    .choppers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .choppers-heading h2 {
+        font-size: 31px;
+    }
+
+    .chopper-image {
+        height: 220px;
+    }
+
+    .chopper-content {
+        padding: 20px;
+    }
+
+    .cash-price {
+        font-size: 23px;
+    }
+
+    .chopper-contact {
+        padding: 30px 18px;
+    }
+
+    .chopper-contact h2 {
+        font-size: 25px;
+    }
+
+}
+
+</style>
 
 <!-- =========================================
      CALL TO ACTION
@@ -1306,6 +2750,98 @@
 </section>
 
 </main>
+
+<!-- =========================================
+     APPOINTMENT BOOKING
+========================================= -->
+<section class="appointment-booking section" id="appointment-booking">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-kicker">
+                VISIT OUR FARM
+            </span>
+
+            <h2>
+                Appointment Booking Charges
+            </h2>
+
+            <p>
+                To ensure every visitor receives a personalized farm tour and professional assistance,
+                appointments are booked in advance with a refundable animal deposit.
+            </p>
+
+        </div>
+
+        <div class="appointment-card">
+
+            <h3>Total Booking Fee</h3>
+
+            <div class="booking-price">
+                <strong>KSh 15,500</strong>
+            </div>
+
+            <div class="booking-details">
+
+                <div class="booking-item">
+                    <h4>KSh 500 – Guidebook & Training</h4>
+                    <p>
+                        Covers the cost of the farm guidebook and introductory training session.
+                        <strong>This amount is non-refundable.</strong>
+                    </p>
+                </div>
+
+                <div class="booking-item">
+                    <h4>KSh 15,000 – Refundable Animal Deposit</h4>
+                    <p>
+                        This deposit secures your appointment and is fully refundable if no animals
+                        are purchased during your visit.
+                    </p>
+
+                    <ul>
+                        <li>If you purchase animals, the <strong>KSh 15,000</strong> will be deducted from your total purchase price.</li>
+                        <li>If you do not purchase any animals, the <strong>KSh 15,000</strong> will be refunded after your visit.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="appointment-note">
+                <p>
+                    <strong>Thank you for your interest.</strong> We look forward to welcoming you to
+                    Kalro Farm Naivasha and helping you find quality livestock.
+                </p>
+            </div>
+
+            <!-- WhatsApp Booking -->
+            <div class="booking-action">
+
+                <h3>Book Your Appointment</h3>
+
+                <p>
+                    Ready to visit our farm? Contact our Sales Manager on WhatsApp to book your appointment and receive payment instructions.
+                </p>
+
+                <a href="https://wa.me/254782443309?text=Hello%20Kalro%20Farm%20Naivasha,%20I%20would%20like%20to%20book%20a%20farm%20appointment."
+                   class="whatsapp-btn"
+                   target="_blank"
+                   rel="noopener">
+
+                    <i class="ri-whatsapp-line"></i>
+                    Book via WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- ================= CONTACT ================= -->
