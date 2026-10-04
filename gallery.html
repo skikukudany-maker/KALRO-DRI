@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,7 +85,7 @@
 
 
     /* ================================
-       HERO
+     HERO
     ================================= */
 
     .gallery-hero {
@@ -675,6 +674,11 @@
             Seeds
         </button>
 
+  <button class="filter-btn"
+                onclick="filterGallery('Milkers', this)">
+            Milkers
+        </button>
+
         <button class="filter-btn"
                 onclick="filterGallery('hay', this)">
             Hay & Feeds
@@ -740,6 +744,7 @@
                 </a>
 
             </div>
+            
 
         </div>
 
@@ -793,6 +798,30 @@
 
         </div>
 
+        <!-- Milkers-->
+
+        <div class="photo"
+             data-category="Milkers"
+             onclick="openLightbox(this)">
+
+            <img src="milkers.png"
+                 alt="Milkers">
+
+            <div class="photo-overlay">
+
+                <h3>Milkers</h3>
+
+                <a href="https://wa.me/254782443309?text=Hello%2C%20I%20am%20interested%20in%20your%20Sahiwal%20cattle."
+                   class="enquire-btn"
+                   target="_blank"
+                   rel="noopener"
+                   onclick="event.stopPropagation();">
+                    💬 Enquire Now
+                </a>
+
+            </div>
+
+        </div>
 
         <!-- YOUNG CATTLE -->
 
